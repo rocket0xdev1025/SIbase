@@ -2,6 +2,7 @@
 const CONFIG = {
   CA: 'TBA',          // EVM contract address on Base, e.g. 0x1234...abcd
   X: 'https://x.com/SI_base',
+  TELEGRAM: 'https://t.me/SI_base',
   CHAIN: 'base'
 };
 /* ========================================== */
@@ -14,7 +15,8 @@ const CONFIG = {
   const LINKS = {
     buy: `https://app.uniswap.org/swap?chain=${CONFIG.CHAIN}&outputCurrency=${caOrTBA}`,
     chart: `https://dexscreener.com/${CONFIG.CHAIN}/${caOrTBA}`,
-    x: CONFIG.X
+    x: CONFIG.X,
+    telegram: CONFIG.TELEGRAM
   };
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const touch = matchMedia('(hover: none), (pointer: coarse)').matches || innerWidth < 768;
