@@ -1,7 +1,7 @@
 /* ===== CONFIG: fill these in at launch ===== */
 const CONFIG = {
   CA: '0xc5cda8b71e207e58ff78794d3a5cba36d14b3d21',          // EVM contract address on Base, e.g. 0x1234...abcd
-  X: 'https://x.com/SI_base',
+  X: 'https://x.com/sionbase',
   TELEGRAM: 'https://t.me/SI_base',
   CHAIN: 'base'
 };
