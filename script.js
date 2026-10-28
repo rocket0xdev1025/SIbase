@@ -1,6 +1,6 @@
 /* ===== CONFIG: fill these in at launch ===== */
 const CONFIG = {
-  CA: 'TBA',          // EVM contract address on Base, e.g. 0x1234...abcd
+  CA: '0xc5cda8b71e207e58ff78794d3a5cba36d14b3d21',          // EVM contract address on Base, e.g. 0x1234...abcd
   X: 'https://x.com/SI_base',
   TELEGRAM: 'https://t.me/SI_base',
   CHAIN: 'base'
@@ -11,7 +11,7 @@ const CONFIG = {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const validCA = /^0x[a-fA-F0-9]{40}$/.test(CONFIG.CA);
-  const caOrTBA = validCA ? CONFIG.CA : 'TBA';
+  const caOrTBA = validCA ? CONFIG.CA : '0xc5cda8b71e207e58ff78794d3a5cba36d14b3d21';
   const LINKS = {
     buy: `https://app.uniswap.org/swap?chain=${CONFIG.CHAIN}&outputCurrency=${caOrTBA}`,
     chart: `https://dexscreener.com/${CONFIG.CHAIN}/${caOrTBA}`,
@@ -27,7 +27,7 @@ const CONFIG = {
     if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.classList.remove('is-disabled'); a.removeAttribute('aria-disabled'); }
     else { a.removeAttribute('href'); a.classList.add('is-disabled'); a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); }
   });
-  const short = validCA ? CONFIG.CA.slice(0, 6) + '...' + CONFIG.CA.slice(-4) : 'TBA';
+  const short = validCA ? CONFIG.CA.slice(0, 6) + '...' + CONFIG.CA.slice(-4) : '0xc5cda8b71e207e58ff78794d3a5cba36d14b3d21';
   $$('[data-ca]').forEach(e => e.textContent = caOrTBA);
   $$('[data-ca-short]').forEach(e => e.textContent = short);
 
@@ -40,7 +40,7 @@ const CONFIG = {
     const ok = await copy(caOrTBA);
     const lab = b.querySelector('span'); const old = lab ? lab.textContent : '';
     b.classList.add('is-copied'); if (lab) lab.textContent = 'Copied';
-    say(ok ? (validCA ? 'Contract address copied' : 'Copied: CA is TBA until launch') : 'Copy failed, select the address manually');
+    say(ok ? (validCA ? 'Contract address copied' : 'Copied: CA is 0xc5cda8b71e207e58ff78794d3a5cba36d14b3d21 until launch') : 'Copy failed, select the address manually');
     setTimeout(() => { b.classList.remove('is-copied'); if (lab) lab.textContent = old; }, 1800);
   }));
 
